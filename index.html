@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>For Teacher</title>
+
+<style type="text/css">
+@font-face {
+  font-family: digit;
+  src: url('digital-7_mono.ttf') format("truetype");
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+
+<div id="main">
+    <div id="code">
+      <span class="comments">/**</span><br>
+      <span class="space"><span class="comments">*2004—09-1,</span><br>
+      <span class="space"><span class="comments">*2018-06-5.</span><br>
+      <span class="space">
+        <span class="comments">*/</span><br>
+        敬爱的  <span class="keyword">张</span> 老师<br>
+      
+        <span class="comments">// 您好，我是涂荐泓。</span><br>
+        <span class="comments">// 不善言辞的我选择用这种方式，来表达想对您说的话，希望您会喜欢。</span><br>
+        <span class="comments">// 这是我为您写的网页，用我现有的专业知识，而这一切的起始，便是您，是您教会我们，做人要有梦想。</span><br>
+        <span class="comments">// 我一直想用一种特别的方式告诉您</span><br>
+        <span class="comments">// 您是我们全班人的人生导师，无论现在在哪里，无论我们是什么样子，我们也永远不会忘记您。</span>
+    </div>
+    <div id="loveHeart">
+      <canvas id="garden"></canvas>
+      <div id="words">
+        <div id="messages">
+          您已经成为我们的老师
+          <div id="elapseClock"><span class="digit">4994</span> day <span class="digit">4</span> hours <span class="digit">08</span> minutes <span class="digit">14</span> second</div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date();
+together.setFullYear(2004, 9, 1);
+together.setHours(20);
+together.setMinutes(0);
+together.setSeconds(0);
+together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+  var msg = document.createElement("div");
+  msg.id = "errorMsg";
+  msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+  document.body.appendChild(msg);
+  $("#code").css("display", "none")
+  document.execCommand("stop");
+} else {
+  setTimeout(function () {
+    startHeartAnimation();
+  }, 5000);
+
+  timeElapse(together);
+  setInterval(function () {
+    timeElapse(together);
+  }, 500);
+
+  adjustCodePosition();
+  $("#code").typewriter();
+}
+</script>
+
+
+</body></html>
